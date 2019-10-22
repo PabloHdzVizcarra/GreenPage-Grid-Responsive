@@ -3,10 +3,24 @@
     margin: 0;
     font-family: 'Big Shoulders Text', cursive;
 }
+body{
+    background: #fbfad3;
+}
+.container-grid{
+    display: grid;
+    grid-template-columns: 5% repeat(4, 1fr) 5%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "main main main main"
+        ". article-01 article-01 article-01"
+
+    ;
+
+}
 /* //////////////////////////Header///////////////////////////////////// */
 header{
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     background: url(../img/beautiful-country-daylight-414061.jpg);
     background-position: center;
     background-size: cover;
@@ -14,38 +28,30 @@ header{
 header h1{
     color: #fff;
     position: absolute;
-    font-size: 3rem;
+    font-size: 2rem;
     top: 1em;
     left: 1em;
 }
 header p{
     color: white;
     position: absolute;
-    top: 6.5em;
-    left: 3.3em;
-    font-size: 1rem;
+    top: 5.5em;
+    left: 2.6em;
+    font-size: 0.8rem;
 }
 /* /////////////////////////Navbar//////////////////////////////////// */
 nav{
-    background: #4e9525;
-}
-.nav-list{
-    /* display: flex; */
-    /* width: auto;
-    height: auto; */
-    /* justify-content: center; */
-    
+    background: #7abd53;
 }
 .nav-list ul{
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     list-style: none;
-    justify-content: space-evenly;
-    line-height: 3rem;
+    justify-content: center;
     
 }
 .nav-list ul li{
-    height: 3rem;
+    padding: 1rem 1.5rem;
     
 }
 .nav-list ul li a{
@@ -54,4 +60,49 @@ nav{
 }
 .nav-list ul li:hover{
     background: #3d771c;
+}
+/* //////////////////////Main///////////////////////////////////// */
+.main{
+    grid-template-areas: main;
+    grid-column: 2/6;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.main h2{
+    color: #254d16;
+}
+.main p{
+    font-size: 0.9rem;
+    text-align: justify;
+}
+/* ////////////////////////Article/////////////////////////////// */
+.article-01,
+.article-02,
+.article-03,
+.article-04{
+    grid-column: 2/ span 4;
+}
+.article-01 img,
+.article-02 img,
+.article-03 img,
+.article-04 img{
+    width: 100%;
+    height: 12.5rem;
+    margin-bottom: 1em;    
+}
+.article-01 h3,
+.article-02 h3,
+.article-03 h3,
+.article-04 h3{
+    color: #7abd53;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.article-01 p,
+.article-02 p,
+.article-03 p,
+.article-04 p{
+    text-align: justify;
+    margin-bottom: 1em;
 }
