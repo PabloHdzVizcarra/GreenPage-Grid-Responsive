@@ -10,14 +10,10 @@ body{
     display: grid;
     grid-template-columns: 5% repeat(4, 1fr) 5%;
     grid-template-rows: auto;
-    grid-template-areas: 
-        "main main main main"
-        ". article-01 article-01 article-01"
-
-    ;
-
 }
-/* //////////////////////////Header///////////////////////////////////// */
+
+/* HEADER */
+
 header{
     width: 100%;
     height: 60vh;
@@ -39,7 +35,9 @@ header p{
     left: 2.6em;
     font-size: 0.8rem;
 }
-/* /////////////////////////Navbar//////////////////////////////////// */
+
+/* NAVBAR */
+
 nav{
     background: #7abd53;
 }
@@ -61,9 +59,11 @@ nav{
 .nav-list ul li:hover{
     background: #3d771c;
 }
-/* //////////////////////Main///////////////////////////////////// */
+
+/* MAIN */
+
 .main{
-    grid-template-areas: main;
+    /* grid-template-areas: main; */
     grid-column: 2/6;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -75,7 +75,9 @@ nav{
     font-size: 0.9rem;
     text-align: justify;
 }
-/* ////////////////////////Article/////////////////////////////// */
+
+/* ARTICLE */
+
 .article-01,
 .article-02,
 .article-03,
@@ -105,4 +107,80 @@ nav{
 .article-04 p{
     text-align: justify;
     margin-bottom: 1em;
+}
+
+/* FORM */
+
+.container-grid form{
+    grid-column: 2/6;
+}
+.container-grid form h4{
+    text-align: center;
+    color: #254d16;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.container-grid form > p{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.container-grid form > input{
+    width: 100%;
+    margin-bottom: 1rem;
+    background: rgba(122, 189, 83, 0.658);
+    border: none;
+    padding: 0.5rem 0;
+}
+.enviar-boton:hover{
+    background: rgba(122, 189, 83, 0.932);
+}
+
+/* FOOTER */
+footer{
+    background: #5b943a;
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+footer a{
+    display: flex;
+    align-self: center;
+}
+footer a img{
+    width: 1rem;
+}
+
+@media (min-width: 768px){
+    .container-grid{
+        gap: 10px;
+    }
+    .nav-list ul{
+        justify-content: space-around;
+    }
+    .main {
+        text-align: center;
+    }
+    .article-01,
+    .article-02,
+    .article-03,
+    .article-04{
+        grid-column: 2/4;
+    }
+    .article-02{
+        grid-column: 4/6;
+    }
+    .article-04{
+        grid-column: 4/6;
+    }
+    .container-grid form{
+        width: 100%;
+        grid-column: 3/5;
+        justify-self: center;
+        border: 1px solid rgba(32, 160, 64, 0.445);
+        padding: 1rem 3rem;
+    }
+
 }
